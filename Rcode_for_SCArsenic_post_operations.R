@@ -1,4 +1,4 @@
-load(file='/data/mackanholt_lab/achatur/SCRNA_Arsenic/SCRNA_Arsenic.RData')
+load(file='/SCRNA_Arsenic/SCRNA_Arsenic.RData')
 
 library(cowplot)
 library(ggplot2)
@@ -87,7 +87,7 @@ subcluster_13_cluster_markers <- subcluster_13_markers %>% group_by(cluster) %>%
 table(subcluster_13_markers$cluster)
 
 
-write.csv(subcluster_13_cluster_markers, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/subcluster_13_markers_top20_res0.2.csv")
+write.csv(subcluster_13_cluster_markers, "/SCRNA_Arsenic/subcluster_13_markers_top20_res0.2.csv")
 
 ##Perform DE
 ##Store previous biological cluster identities
@@ -175,7 +175,7 @@ subcluster_0_cluster_markers <- subcluster_0_markers %>% group_by(cluster) %>% t
 head(subcluster_0_markers)
 table(cluster_0_subset$seurat_clusters)
 
-write.csv(subcluster_0_cluster_markers, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/subcluster_0_markers_top20_res0.2.csv")
+write.csv(subcluster_0_cluster_markers, "/SCRNA_Arsenic/subcluster_0_markers_top20_res0.2.csv")
 
 ##Perform DE
 ##Store previous biological cluster identities
@@ -225,18 +225,18 @@ head(deg_M_subcluster0_1)
 head(deg_M_subcluster0_2)
 head(deg_M_subcluster0_3)
 
-write.csv(deg_F_subcluster0_0, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C0_0.csv")
-write.csv(deg_M_subcluster0_0, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C0_0.csv")
-write.csv(deg_F_subcluster0_1, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C0_1.csv")
-write.csv(deg_M_subcluster0_1, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C0_1.csv")
-write.csv(deg_F_subcluster0_3, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C0_3.csv")
-write.csv(deg_M_subcluster0_3, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C0_3.csv")
-write.csv(deg_F_subcluster0_4, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C0_4.csv")
-write.csv(deg_M_subcluster0_4, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C0_4.csv")
-write.csv(deg_F_subcluster0_6, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C0_6.csv")
-write.csv(deg_M_subcluster0_6, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C0_6.csv")
-write.csv(deg_F_subcluster0_8, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C0_8.csv")
-write.csv(deg_M_subcluster0_8, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C0_8.csv")
+write.csv(deg_F_subcluster0_0, "/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C0_0.csv")
+write.csv(deg_M_subcluster0_0, "/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C0_0.csv")
+write.csv(deg_F_subcluster0_1, "/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C0_1.csv")
+write.csv(deg_M_subcluster0_1, "/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C0_1.csv")
+write.csv(deg_F_subcluster0_3, "/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C0_3.csv")
+write.csv(deg_M_subcluster0_3, "/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C0_3.csv")
+write.csv(deg_F_subcluster0_4, "/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C0_4.csv")
+write.csv(deg_M_subcluster0_4, "/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C0_4.csv")
+write.csv(deg_F_subcluster0_6, "/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C0_6.csv")
+write.csv(deg_M_subcluster0_6, "/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C0_6.csv")
+write.csv(deg_F_subcluster0_8, "/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C0_8.csv")
+write.csv(deg_M_subcluster0_8, "/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C0_8.csv")
 
 
 
@@ -265,7 +265,7 @@ table(Idents(Brain.integrated))
 
 # Find markers for the merged cluster 15 (which now includes cells from clusters 15, 16, and 28)
 Brain.integrated_markers_15_merged_15_16_28 <- FindMarkers(Brain.integrated, ident.1 = "15", min.pct = 0.25, logfc.threshold = 0.5)
-write.csv(Brain.integrated_markers_15_merged_15_16_28, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brainintegrated_markers_15_merged_15_16_28.csv")
+write.csv(Brain.integrated_markers_15_merged_15_16_28, "/SCRNA_Arsenic/Brainintegrated_markers_15_merged_15_16_28.csv")
 
 
 # View the top differentially expressed genes for the merged cluster 15
@@ -274,8 +274,8 @@ head(Brain.integrated_markers_15_merged_15_16_28)
 Idents(Brain.integrated) <- "celltype.gender_stim"
 DEG_cluster_15_male_arsenic <- FindMarkers(Brain.integrated,ident.1 = "15_male_Arsenic",ident.2 = "15_male_Control", subset.ident = "15",test.use = "MAST", assay = "SCT", slot = "scale.data")
 DEG_cluster_15_female_arsenic <- FindMarkers(Brain.integrated,ident.1 = "15_female_Arsenic",ident.2 = "15_female_Control", subset.ident = "15",test.use = "MAST", assay = "SCT", slot = "scale.data")
-write.csv(DEG_cluster_15_male_arsenic, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/DEG_merged_cluster_15_16_28_male_arsenic.csv")
-write.csv(DEG_cluster_15_female_arsenic, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/DEG_merged_cluster_15_16_28female_arsenic.csv")
+write.csv(DEG_cluster_15_male_arsenic, "/SCRNA_Arsenic/DEG_merged_cluster_15_16_28_male_arsenic.csv")
+write.csv(DEG_cluster_15_female_arsenic, "/SCRNA_Arsenic/DEG_merged_cluster_15_16_28female_arsenic.csv")
 
 
 ###################Merge Kenyon cell clusters and perform DEG analysis#################################
@@ -302,7 +302,7 @@ table(Idents(Brain.integrated))
 
 # Find markers for the merged cluster 8 (which now includes cells from clusters 8 and 21)
 Brain.integrated_markers_8_merged_8_21 <- FindMarkers(Brain.integrated, ident.1 = "8", min.pct = 0.25, logfc.threshold = 0.5)
-write.csv(Brain.integrated_markers_8_merged_8_21, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brainintegrated_markers_8_merged_8_21.csv")
+write.csv(Brain.integrated_markers_8_merged_8_21, "/SCRNA_Arsenic/Brainintegrated_markers_8_merged_8_21.csv")
 
 
 # View the top differentially expressed genes for the merged cluster 8
@@ -311,8 +311,8 @@ head(Brain.integrated_markers_8_merged_8_21)
 Idents(Brain.integrated) <- "celltype.gender_stim"
 DEG_cluster_8_male_arsenic <- FindMarkers(Brain.integrated,ident.1 = "8_male_Arsenic",ident.2 = "8_male_Control", subset.ident = "8",test.use = "MAST", assay = "SCT", slot = "scale.data")
 DEG_cluster_8_female_arsenic <- FindMarkers(Brain.integrated,ident.1 = "8_female_Arsenic",ident.2 = "8_female_Control", subset.ident = "8",test.use = "MAST", assay = "SCT", slot = "scale.data")
-write.csv(DEG_cluster_8_male_arsenic, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/DEG_merged_cluster_8_21_male_arsenic.csv")
-write.csv(DEG_cluster_8_female_arsenic, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/DEG_merged_cluster_8_21_female_arsenic.csv")
+write.csv(DEG_cluster_8_male_arsenic, "/SCRNA_Arsenic/DEG_merged_cluster_8_21_male_arsenic.csv")
+write.csv(DEG_cluster_8_female_arsenic, "/SCRNA_Arsenic/DEG_merged_cluster_8_21_female_arsenic.csv")
 
 
 ###################Merge Subperineurial cell clusters and perform DEG analysis#################################
@@ -339,7 +339,7 @@ table(Idents(Brain.integrated))
 
 # Find markers for the merged cluster 17 (which now includes cells from clusters 17 and 18)
 Brain.integrated_markers_17_merged_17_18 <- FindMarkers(Brain.integrated, ident.1 = "17", min.pct = 0.25, logfc.threshold = 0.5)
-write.csv(Brain.integrated_markers_17_merged_17_18, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brainintegrated_markers_17_merged_17_18.csv")
+write.csv(Brain.integrated_markers_17_merged_17_18, "/SCRNA_Arsenic/Brainintegrated_markers_17_merged_17_18.csv")
 
 
 # View the top differentially expressed genes for the merged cluster 17
@@ -348,8 +348,8 @@ head(Brain.integrated_markers_17_merged_17_18)
 Idents(Brain.integrated) <- "celltype.gender_stim"
 DEG_cluster_17_male_arsenic <- FindMarkers(Brain.integrated,ident.1 = "17_male_Arsenic",ident.2 = "17_male_Control", subset.ident = "17",test.use = "MAST", assay = "SCT", slot = "scale.data")
 DEG_cluster_17_female_arsenic <- FindMarkers(Brain.integrated,ident.1 = "17_female_Arsenic",ident.2 = "17_female_Control", subset.ident = "17",test.use = "MAST", assay = "SCT", slot = "scale.data")
-write.csv(DEG_cluster_17_male_arsenic, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/DEG_merged_cluster_17_18_male_arsenic.csv")
-write.csv(DEG_cluster_17_female_arsenic, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/DEG_merged_cluster_17_18_female_arsenic.csv")
+write.csv(DEG_cluster_17_male_arsenic, "/SCRNA_Arsenic/DEG_merged_cluster_17_18_male_arsenic.csv")
+write.csv(DEG_cluster_17_female_arsenic, "/SCRNA_Arsenic/DEG_merged_cluster_17_18_female_arsenic.csv")
 
 
 
@@ -377,7 +377,7 @@ table(Idents(Brain.integrated))
 
 # Find markers for the merged cluster 11 (which now includes cells from clusters 11 and 33)
 Brain.integrated_markers_11_merged_11_33 <- FindMarkers(Brain.integrated, ident.1 = "11", min.pct = 0.25, logfc.threshold = 0.5)
-write.csv(Brain.integrated_markers_11_merged_11_33, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brainintegrated_markers_11_merged_11_33.csv")
+write.csv(Brain.integrated_markers_11_merged_11_33, "/SCRNA_Arsenic/Brainintegrated_markers_11_merged_11_33.csv")
 
 
 # View the top differentially expressed genes for the merged cluster 11
@@ -386,8 +386,8 @@ head(Brain.integrated_markers_11_merged_11_33)
 Idents(Brain.integrated) <- "celltype.gender_stim"
 DEG_cluster_11_male_arsenic <- FindMarkers(Brain.integrated,ident.1 = "11_male_Arsenic",ident.2 = "11_male_Control", subset.ident = "11",test.use = "MAST", assay = "SCT", slot = "scale.data")
 DEG_cluster_11_female_arsenic <- FindMarkers(Brain.integrated,ident.1 = "11_female_Arsenic",ident.2 = "11_female_Control", subset.ident = "11",test.use = "MAST", assay = "SCT", slot = "scale.data")
-write.csv(DEG_cluster_11_male_arsenic, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/DEG_merged_cluster_11_33_male_arsenic.csv")
-write.csv(DEG_cluster_11_female_arsenic, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/DEG_merged_cluster_11_33_female_arsenic.csv")
+write.csv(DEG_cluster_11_male_arsenic, "/SCRNA_Arsenic/DEG_merged_cluster_11_33_male_arsenic.csv")
+write.csv(DEG_cluster_11_female_arsenic, "/SCRNA_Arsenic/DEG_merged_cluster_11_33_female_arsenic.csv")
 
 
 ###################Merge Ensheating neuropil associated glial cell clusters and perform DEG analysis#################################
@@ -417,7 +417,7 @@ table(Idents(Brain.integrated))
 
 # Find markers for the merged cluster 7 (which now includes cells from clusters 7,29,30,31 and 32)
 Brain.integrated_markers_7_merged_7_29_30_31_32 <- FindMarkers(Brain.integrated, ident.1 = "7", min.pct = 0.25, logfc.threshold = 0.5)
-write.csv(Brain.integrated_markers_7_merged_7_29_30_31_32, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brainintegrated_markers_7_merged_7_29_30_31_32.csv")
+write.csv(Brain.integrated_markers_7_merged_7_29_30_31_32, "/SCRNA_Arsenic/Brainintegrated_markers_7_merged_7_29_30_31_32.csv")
 
 # View the top differentially expressed genes for the merged cluster 7
 head(Brain.integrated_markers_7_merged_7_29_30_31_32)
@@ -425,8 +425,8 @@ head(Brain.integrated_markers_7_merged_7_29_30_31_32)
 Idents(Brain.integrated) <- "celltype.gender_stim"
 DEG_cluster_7_male_arsenic <- FindMarkers(Brain.integrated,ident.1 = "7_male_Arsenic",ident.2 = "7_male_Control", subset.ident = "7",test.use = "MAST", assay = "SCT", slot = "scale.data")
 DEG_cluster_7_female_arsenic <- FindMarkers(Brain.integrated,ident.1 = "7_female_Arsenic",ident.2 = "7_female_Control", subset.ident = "7",test.use = "MAST", assay = "SCT", slot = "scale.data")
-write.csv(DEG_cluster_7_male_arsenic, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/DEG_merged_cluster_7_29_30_31_32_male_arsenic.csv")
-write.csv(DEG_cluster_7_female_arsenic, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/DEG_merged_cluster7_29_30_31_32_female_arsenic.csv")
+write.csv(DEG_cluster_7_male_arsenic, "/SCRNA_Arsenic/DEG_merged_cluster_7_29_30_31_32_male_arsenic.csv")
+write.csv(DEG_cluster_7_female_arsenic, "/SCRNA_Arsenic/DEG_merged_cluster7_29_30_31_32_female_arsenic.csv")
 
 
 ###################Merge Ensheating glial cell clusters and perform DEG analysis#################################
@@ -453,7 +453,7 @@ table(Idents(Brain.integrated))
 
 # Find markers for the merged cluster 9 (which now includes cells from clusters 9 and 10)
 Brain.integrated_markers_9_merged_9_10 <- FindMarkers(Brain.integrated, ident.1 = "9", min.pct = 0.25, logfc.threshold = 0.5)
-write.csv(Brain.integrated_markers_9_merged_9_10, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brainintegrated_markers_9_merged_9_10.csv")
+write.csv(Brain.integrated_markers_9_merged_9_10, "/SCRNA_Arsenic/Brainintegrated_markers_9_merged_9_10.csv")
 
 # View the top differentially expressed genes for the merged cluster 9
 head(Brain.integrated_markers_9_merged_9_10)
@@ -461,8 +461,8 @@ head(Brain.integrated_markers_9_merged_9_10)
 Idents(Brain.integrated) <- "celltype.gender_stim"
 DEG_cluster_9_male_arsenic <- FindMarkers(Brain.integrated,ident.1 = "9_male_Arsenic",ident.2 = "9_male_Control", subset.ident = "9",test.use = "MAST", assay = "SCT", slot = "scale.data")
 DEG_cluster_9_female_arsenic <- FindMarkers(Brain.integrated,ident.1 = "9_female_Arsenic",ident.2 = "9_female_Control", subset.ident = "9",test.use = "MAST", assay = "SCT", slot = "scale.data")
-write.csv(DEG_cluster_9_male_arsenic, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/DEG_merged_cluster_9_10_male_arsenic.csv")
-write.csv(DEG_cluster_9_female_arsenic, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/DEG_merged_cluster_9_10_female_arsenic.csv")
+write.csv(DEG_cluster_9_male_arsenic, "/SCRNA_Arsenic/DEG_merged_cluster_9_10_male_arsenic.csv")
+write.csv(DEG_cluster_9_female_arsenic, "/SCRNA_Arsenic/DEG_merged_cluster_9_10_female_arsenic.csv")
 
 
 
@@ -517,7 +517,7 @@ table(Idents(Brain.integrated))
 
 # Find markers for the merged cluster 27 (which now includes cells from clusters 27 and 13_3)
 Brain.integrated_markers_27_merged_27_13_3 <- FindMarkers(Brain.integrated, ident.1 = "27", min.pct = 0.25, logfc.threshold = 0.5)
-write.csv(Brain.integrated_markers_27_merged_27_13_3, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brainintegrated_markers_27_merged_27_13_3.csv")
+write.csv(Brain.integrated_markers_27_merged_27_13_3, "/SCRNA_Arsenic/Brainintegrated_markers_27_merged_27_13_3.csv")
 
 # View the top differentially expressed genes for the merged cluster 27
 head(Brain.integrated_markers_27_merged_27_13_3)
@@ -525,8 +525,8 @@ head(Brain.integrated_markers_27_merged_27_13_3)
 Idents(Brain.integrated) <- "celltype.gender_stim"
 DEG_cluster_27_male_arsenic <- FindMarkers(Brain.integrated,ident.1 = "27_male_Arsenic",ident.2 = "27_male_Control", subset.ident = "27",test.use = "MAST", assay = "SCT", slot = "scale.data")
 DEG_cluster_27_female_arsenic <- FindMarkers(Brain.integrated,ident.1 = "27_female_Arsenic",ident.2 = "27_female_Control", subset.ident = "27",test.use = "MAST", assay = "SCT", slot = "scale.data")
-write.csv(DEG_cluster_27_male_arsenic, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/DEG_merged_cluster_27_13_3_male_arsenic.csv")
-write.csv(DEG_cluster_27_female_arsenic, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/DEG_merged_cluster_27_13_3_female_arsenic.csv")
+write.csv(DEG_cluster_27_male_arsenic, "/SCRNA_Arsenic/DEG_merged_cluster_27_13_3_male_arsenic.csv")
+write.csv(DEG_cluster_27_female_arsenic, "/SCRNA_Arsenic/DEG_merged_cluster_27_13_3_female_arsenic.csv")
 
 
 ###################Merge optic chiasma glial clusters and perform DEG analysis#################################
@@ -553,7 +553,7 @@ table(Idents(Brain.integrated))
 
 # Find markers for the merged cluster 19 (which now includes cells from clusters 19 and 13_3)
 Brain.integrated_markers_19_merged_19_13_2 <- FindMarkers(Brain.integrated, ident.1 = "19", min.pct = 0.25, logfc.threshold = 0.5)
-write.csv(Brain.integrated_markers_19_merged_19_13_2, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brainintegrated_markers_19_merged_19_13_2.csv")
+write.csv(Brain.integrated_markers_19_merged_19_13_2, "/SCRNA_Arsenic/Brainintegrated_markers_19_merged_19_13_2.csv")
 
 # View the top differentially expressed genes for the merged cluster 19
 head(Brain.integrated_markers_19_merged_19_13_2)
@@ -561,8 +561,8 @@ head(Brain.integrated_markers_19_merged_19_13_2)
 Idents(Brain.integrated) <- "celltype.gender_stim"
 DEG_cluster_19_male_arsenic <- FindMarkers(Brain.integrated,ident.1 = "19_male_Arsenic",ident.2 = "19_male_Control", subset.ident = "19",test.use = "MAST", assay = "SCT", slot = "scale.data")
 DEG_cluster_19_female_arsenic <- FindMarkers(Brain.integrated,ident.1 = "19_female_Arsenic",ident.2 = "19_female_Control", subset.ident = "19",test.use = "MAST", assay = "SCT", slot = "scale.data")
-write.csv(DEG_cluster_19_male_arsenic, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/DEG_merged_cluster_19_13_2_male_arsenic.csv")
-write.csv(DEG_cluster_19_female_arsenic, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/DEG_merged_cluster_19_13_2_female_arsenic.csv")
+write.csv(DEG_cluster_19_male_arsenic, "/SCRNA_Arsenic/DEG_merged_cluster_19_13_2_male_arsenic.csv")
+write.csv(DEG_cluster_19_female_arsenic, "/SCRNA_Arsenic/DEG_merged_cluster_19_13_2_female_arsenic.csv")
 
 
 ###################Merge photoreceptor clusters and perform DEG analysis#################################
@@ -589,7 +589,7 @@ table(Idents(Brain.integrated))
 
 # Find markers for the merged cluster 24 (which now includes cells from clusters 24 and 13_3)
 Brain.integrated_markers_24_merged_24_13_4 <- FindMarkers(Brain.integrated, ident.1 = "24", min.pct = 0.25, logfc.threshold = 0.5)
-write.csv(Brain.integrated_markers_24_merged_24_13_4, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brainintegrated_markers_24_merged_24_13_4.csv")
+write.csv(Brain.integrated_markers_24_merged_24_13_4, "/SCRNA_Arsenic/Brainintegrated_markers_24_merged_24_13_4.csv")
 
 # View the top differentially expressed genes for the merged cluster 24
 head(Brain.integrated_markers_24_merged_24_13_4)
@@ -597,8 +597,8 @@ head(Brain.integrated_markers_24_merged_24_13_4)
 Idents(Brain.integrated) <- "celltype.gender_stim"
 DEG_cluster_24_male_arsenic <- FindMarkers(Brain.integrated,ident.1 = "24_male_Arsenic",ident.2 = "24_male_Control", subset.ident = "24",test.use = "MAST", assay = "SCT", slot = "scale.data")
 DEG_cluster_24_female_arsenic <- FindMarkers(Brain.integrated,ident.1 = "24_female_Arsenic",ident.2 = "24_female_Control", subset.ident = "24",test.use = "MAST", assay = "SCT", slot = "scale.data")
-write.csv(DEG_cluster_24_male_arsenic, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/DEG_merged_cluster_24_13_4_male_arsenic.csv")
-write.csv(DEG_cluster_24_female_arsenic, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/DEG_merged_cluster_24_13_4_female_arsenic.csv")
+write.csv(DEG_cluster_24_male_arsenic, "/SCRNA_Arsenic/DEG_merged_cluster_24_13_4_male_arsenic.csv")
+write.csv(DEG_cluster_24_female_arsenic, "/SCRNA_Arsenic/DEG_merged_cluster_24_13_4_female_arsenic.csv")
 
 ###################Merge dopaminergic PAM neuron clusters and perform DEG analysis#################################
 # Set Seurat identities to the clusters (if not already set)
@@ -627,7 +627,7 @@ table(Idents(Brain.integrated))
 
 # Find markers for the merged cluster 3 (which now includes cells from clusters 3,4,34,0_3 and 0_6)
 Brain.integrated_markers_3_merged_3 <- FindMarkers(Brain.integrated, ident.1 = "3", min.pct = 0.25, logfc.threshold = 0.5)
-write.csv(Brain.integrated_markers_3_merged_3, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brainintegrated_markers_3_mergedPAMneuron.csv")
+write.csv(Brain.integrated_markers_3_merged_3, "/SCRNA_Arsenic/Brainintegrated_markers_3_mergedPAMneuron.csv")
 
 # View the top differentially expressed genes for the merged cluster 3
 head(Brain.integrated_markers_3_merged_3)
@@ -635,8 +635,8 @@ head(Brain.integrated_markers_3_merged_3)
 Idents(Brain.integrated) <- "celltype.gender_stim"
 DEG_cluster_3_male_arsenic <- FindMarkers(Brain.integrated,ident.1 = "3_male_Arsenic",ident.2 = "3_male_Control", subset.ident = "3",test.use = "MAST", assay = "SCT", slot = "scale.data")
 DEG_cluster_3_female_arsenic <- FindMarkers(Brain.integrated,ident.1 = "3_female_Arsenic",ident.2 = "3_female_Control", subset.ident = "3",test.use = "MAST", assay = "SCT", slot = "scale.data")
-write.csv(DEG_cluster_3_male_arsenic, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/DEG_merged_cluster_3_PAMneuron_male_arsenic.csv")
-write.csv(DEG_cluster_3_female_arsenic, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/DEG_merged_cluster_3_PAMneuron_female_arsenic.csv")
+write.csv(DEG_cluster_3_male_arsenic, "/SCRNA_Arsenic/DEG_merged_cluster_3_PAMneuron_male_arsenic.csv")
+write.csv(DEG_cluster_3_female_arsenic, "/SCRNA_Arsenic/DEG_merged_cluster_3_PAMneuron_female_arsenic.csv")
 
 ###################Merge Tm5c neuron clusters and perform DEG analysis#################################
 # Set Seurat identities to the clusters (if not already set)
@@ -662,7 +662,7 @@ table(Idents(Brain.integrated))
 
 # Find markers for the merged cluster 22 (which now includes cells from clusters 22,4,224,0_22 and 0_6)
 Brain.integrated_markers_22_merged_22 <- FindMarkers(Brain.integrated, ident.1 = "22", min.pct = 0.25, logfc.threshold = 0.5)
-write.csv(Brain.integrated_markers_22_merged_22, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brainintegrated_markers_22_mergedPAMneuron.csv")
+write.csv(Brain.integrated_markers_22_merged_22, "/SCRNA_Arsenic/Brainintegrated_markers_22_mergedPAMneuron.csv")
 
 # View the top differentially expressed genes for the merged cluster 22
 head(Brain.integrated_markers_22_merged_22)
@@ -670,40 +670,40 @@ head(Brain.integrated_markers_22_merged_22)
 Idents(Brain.integrated) <- "celltype.gender_stim"
 DEG_cluster_22_male_arsenic <- FindMarkers(Brain.integrated,ident.1 = "22_male_Arsenic",ident.2 = "22_male_Control", subset.ident = "22",test.use = "MAST", assay = "SCT", slot = "scale.data")
 DEG_cluster_22_female_arsenic <- FindMarkers(Brain.integrated,ident.1 = "22_female_Arsenic",ident.2 = "22_female_Control", subset.ident = "22",test.use = "MAST", assay = "SCT", slot = "scale.data")
-write.csv(DEG_cluster_22_male_arsenic, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/DEG_merged_cluster_22_Tm5cneuron_male_arsenic.csv")
-write.csv(DEG_cluster_22_female_arsenic, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/DEG_merged_cluster_22_Tm5cneuron_female_arsenic.csv")
+write.csv(DEG_cluster_22_male_arsenic, "/SCRNA_Arsenic/DEG_merged_cluster_22_Tm5cneuron_male_arsenic.csv")
+write.csv(DEG_cluster_22_female_arsenic, "/SCRNA_Arsenic/DEG_merged_cluster_22_Tm5cneuron_female_arsenic.csv")
 
 
 #####Saving the DEG from clusters that don't need to be merged
-write.csv(Brain_Arsenic_DE_male_stim_C26, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C26.csv")
-write.csv(Brain_Arsenic_DE_female_stim_C26, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C26.csv")
-write.csv(Brain_Arsenic_DE_male_stim_C23, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C23.csv")
-write.csv(Brain_Arsenic_DE_female_stim_C23, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C23.csv")
-write.csv(Brain_Arsenic_DE_male_stim_C25, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C25.csv")
-write.csv(Brain_Arsenic_DE_female_stim_C25, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C25.csv")
+write.csv(Brain_Arsenic_DE_male_stim_C26, "/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C26.csv")
+write.csv(Brain_Arsenic_DE_female_stim_C26, "/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C26.csv")
+write.csv(Brain_Arsenic_DE_male_stim_C23, "/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C23.csv")
+write.csv(Brain_Arsenic_DE_female_stim_C23, "/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C23.csv")
+write.csv(Brain_Arsenic_DE_male_stim_C25, "/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C25.csv")
+write.csv(Brain_Arsenic_DE_female_stim_C25, "/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C25.csv")
 
-write.csv(Brain_Arsenic_DE_male_stim_C12, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C12.csv")
-write.csv(Brain_Arsenic_DE_female_stim_C12, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C12.csv")
+write.csv(Brain_Arsenic_DE_male_stim_C12, "/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C12.csv")
+write.csv(Brain_Arsenic_DE_female_stim_C12, "/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C12.csv")
 
-write.csv(Brain_Arsenic_DE_male_stim_C5, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C5.csv")
-write.csv(Brain_Arsenic_DE_female_stim_C5, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C5.csv")
+write.csv(Brain_Arsenic_DE_male_stim_C5, "/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C5.csv")
+write.csv(Brain_Arsenic_DE_female_stim_C5, "/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C5.csv")
 
-write.csv(Brain_Arsenic_DE_male_stim_C20, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C20.csv")
-write.csv(Brain_Arsenic_DE_female_stim_C20, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C20.csv")
+write.csv(Brain_Arsenic_DE_male_stim_C20, "/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C20.csv")
+write.csv(Brain_Arsenic_DE_female_stim_C20, "/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C20.csv")
 
-write.csv(Brain_Arsenic_DE_male_stim_C14, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C14.csv")
-write.csv(Brain_Arsenic_DE_female_stim_C14, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C14.csv")
+write.csv(Brain_Arsenic_DE_male_stim_C14, "/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C14.csv")
+write.csv(Brain_Arsenic_DE_female_stim_C14, "/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C14.csv")
 
-write.csv(Brain_Arsenic_DE_male_stim_C1, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C1.csv")
-write.csv(Brain_Arsenic_DE_female_stim_C1, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C1.csv")
+write.csv(Brain_Arsenic_DE_male_stim_C1, "/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C1.csv")
+write.csv(Brain_Arsenic_DE_female_stim_C1, "/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C1.csv")
 
-write.csv(Brain_Arsenic_DE_male_stim_C2, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C2.csv")
-write.csv(Brain_Arsenic_DE_female_stim_C2, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C2.csv")
+write.csv(Brain_Arsenic_DE_male_stim_C2, "/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C2.csv")
+write.csv(Brain_Arsenic_DE_female_stim_C2, "/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C2.csv")
 
-write.csv(Brain_Arsenic_DE_male_stim_C6, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C6.csv")
-write.csv(Brain_Arsenic_DE_female_stim_C6, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C6.csv")
+write.csv(Brain_Arsenic_DE_male_stim_C6, "/SCRNA_Arsenic/Brain_Arsenic_DE_male_stim_C6.csv")
+write.csv(Brain_Arsenic_DE_female_stim_C6, "/SCRNA_Arsenic/Brain_Arsenic_DE_female_stim_C6.csv")
 
-save.image(file='/data/mackanholt_lab/achatur/SCRNA_Arsenic/SCRNA_Arsenic.RData')
+save.image(file='/SCRNA_Arsenic/SCRNA_Arsenic.RData')
 
 ####Get scaled data
 DefaultAssay(Brain.integrated)<-"SCT"
@@ -715,7 +715,7 @@ C27_cells_female<-WhichCells(Brain.integrated,idents=27)
 Brain_Arsenic_DE_female_stim_27_index <- which(Brain_Arsenic_DE_female_stim_C27[,5]<=0.05)
 C27_scale_data_female <- FetchData(Brain.integrated,vars = rownames(Brain_Arsenic_DE_female_stim_C27[Brain_Arsenic_DE_female_stim_27_index,]),cells=C27_cells_female,slot = "scale.data")
 
-write.csv(C27_scale_data_female, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C27_scale_data_female.csv")
+write.csv(C27_scale_data_female, "/SCRNA_Arsenic/C27_scale_data_female.csv")
 
 
 # Set the default assay and identities for the Seurat object
@@ -734,158 +734,158 @@ Idents(Brain.integrated) <- "seurat_clusters"
 C1_cells_female <- WhichCells(Brain.integrated, idents = 1)
 C1_de_genes_index <- which(Brain_Arsenic_DE_female_stim_C1[, 5] <= 0.05)
 C1_scale_data_female <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_female_stim_C1[C1_de_genes_index, ]), cells = C1_cells_female, slot = "scale.data")
-write.csv(C1_scale_data_female, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C1_scale_data_female.csv")
+write.csv(C1_scale_data_female, "/SCRNA_Arsenic/C1_scale_data_female.csv")
 
 # Cluster 2
 C2_cells_female <- WhichCells(Brain.integrated, idents = 2)
 C2_de_genes_index <- which(Brain_Arsenic_DE_female_stim_C2[, 5] <= 0.05)
 C2_scale_data_female <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_female_stim_C2[C2_de_genes_index, ]), cells = C2_cells_female, slot = "scale.data")
-write.csv(C2_scale_data_female, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C2_scale_data_female.csv")
+write.csv(C2_scale_data_female, "/SCRNA_Arsenic/C2_scale_data_female.csv")
 
 # Cluster 3
 C3_cells_female <- WhichCells(Brain.integrated, idents = 3)
 C3_de_genes_index <- which(Brain_Arsenic_DE_female_stim_C3[, 5] <= 0.05)
 C3_scale_data_female <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_female_stim_C3[C3_de_genes_index, ]), cells = C3_cells_female, slot = "scale.data")
-write.csv(C3_scale_data_female, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C3_scale_data_female.csv")
+write.csv(C3_scale_data_female, "/SCRNA_Arsenic/C3_scale_data_female.csv")
 
 # Cluster 5
 C5_cells_female <- WhichCells(Brain.integrated, idents = 5)
 C5_de_genes_index <- which(Brain_Arsenic_DE_female_stim_C5[, 5] <= 0.05)
 C5_scale_data_female <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_female_stim_C5[C5_de_genes_index, ]), cells = C5_cells_female, slot = "scale.data")
-write.csv(C5_scale_data_female, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C5_scale_data_female.csv")
+write.csv(C5_scale_data_female, "/SCRNA_Arsenic/C5_scale_data_female.csv")
 
 # Cluster 6
 C6_cells_female <- WhichCells(Brain.integrated, idents = 6)
 C6_de_genes_index <- which(Brain_Arsenic_DE_female_stim_C6[, 5] <= 0.05)
 C6_scale_data_female <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_female_stim_C6[C6_de_genes_index, ]), cells = C6_cells_female, slot = "scale.data")
-write.csv(C6_scale_data_female, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C6_scale_data_female.csv")
+write.csv(C6_scale_data_female, "/SCRNA_Arsenic/C6_scale_data_female.csv")
 
 # Cluster 7
 C7_cells_female <- WhichCells(Brain.integrated, idents = 7)
 C7_de_genes_index <- which(Brain_Arsenic_DE_female_stim_C7[, 5] <= 0.05)
 C7_scale_data_female <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_female_stim_C7[C7_de_genes_index, ]), cells = C7_cells_female, slot = "scale.data")
-write.csv(C7_scale_data_female, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C7_scale_data_female.csv")
+write.csv(C7_scale_data_female, "/SCRNA_Arsenic/C7_scale_data_female.csv")
 
 # Cluster 8
 C8_cells_female <- WhichCells(Brain.integrated, idents = 8)
 C8_de_genes_index <- which(Brain_Arsenic_DE_female_stim_C8[, 5] <= 0.05)
 C8_scale_data_female <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_female_stim_C8[C8_de_genes_index, ]), cells = C8_cells_female, slot = "scale.data")
-write.csv(C8_scale_data_female, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C8_scale_data_female.csv")
+write.csv(C8_scale_data_female, "/SCRNA_Arsenic/C8_scale_data_female.csv")
 
 # Cluster 9
 C9_cells_female <- WhichCells(Brain.integrated, idents = 9)
 C9_de_genes_index <- which(Brain_Arsenic_DE_female_stim_C9[, 5] <= 0.05)
 C9_scale_data_female <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_female_stim_C9[C9_de_genes_index, ]), cells = C9_cells_female, slot = "scale.data")
-write.csv(C9_scale_data_female, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C9_scale_data_female.csv")
+write.csv(C9_scale_data_female, "/SCRNA_Arsenic/C9_scale_data_female.csv")
 
 # Cluster 11
 C11_cells_female <- WhichCells(Brain.integrated, idents = 11)
 C11_de_genes_index <- which(Brain_Arsenic_DE_female_stim_C11[, 5] <= 0.05)
 C11_scale_data_female <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_female_stim_C11[C11_de_genes_index, ]), cells = C11_cells_female, slot = "scale.data")
-write.csv(C11_scale_data_female, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C11_scale_data_female.csv")
+write.csv(C11_scale_data_female, "/SCRNA_Arsenic/C11_scale_data_female.csv")
 
 # Cluster 12
 C12_cells_female <- WhichCells(Brain.integrated, idents = 12)
 C12_de_genes_index <- which(Brain_Arsenic_DE_female_stim_C12[, 5] <= 0.05)
 C12_scale_data_female <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_female_stim_C12[C12_de_genes_index, ]), cells = C12_cells_female, slot = "scale.data")
-write.csv(C12_scale_data_female, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C12_scale_data_female.csv")
+write.csv(C12_scale_data_female, "/SCRNA_Arsenic/C12_scale_data_female.csv")
 
 # Cluster 14
 C14_cells_female <- WhichCells(Brain.integrated, idents = 14)
 C14_de_genes_index <- which(Brain_Arsenic_DE_female_stim_C14[, 5] <= 0.05)
 C14_scale_data_female <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_female_stim_C14[C14_de_genes_index, ]), cells = C14_cells_female, slot = "scale.data")
-write.csv(C14_scale_data_female, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C14_scale_data_female.csv")
+write.csv(C14_scale_data_female, "/SCRNA_Arsenic/C14_scale_data_female.csv")
 
 # Cluster 15
 C15_cells_female <- WhichCells(Brain.integrated, idents = 15)
 C15_de_genes_index <- which(Brain_Arsenic_DE_female_stim_C15[, 5] <= 0.05)
 C15_scale_data_female <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_female_stim_C15[C15_de_genes_index, ]), cells = C15_cells_female, slot = "scale.data")
-write.csv(C15_scale_data_female, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C15_scale_data_female.csv")
+write.csv(C15_scale_data_female, "/SCRNA_Arsenic/C15_scale_data_female.csv")
 
 # Cluster 17
 C17_cells_female <- WhichCells(Brain.integrated, idents = 17)
 C17_de_genes_index <- which(Brain_Arsenic_DE_female_stim_C17[, 5] <= 0.05)
 C17_scale_data_female <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_female_stim_C17[C17_de_genes_index, ]), cells = C17_cells_female, slot = "scale.data")
-write.csv(C17_scale_data_female, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C17_scale_data_female.csv")
+write.csv(C17_scale_data_female, "/SCRNA_Arsenic/C17_scale_data_female.csv")
 
 # Cluster 19
 C19_cells_female <- WhichCells(Brain.integrated, idents = 19)
 C19_de_genes_index <- which(Brain_Arsenic_DE_female_stim_C19[, 5] <= 0.05)
 C19_scale_data_female <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_female_stim_C19[C19_de_genes_index, ]), cells = C19_cells_female, slot = "scale.data")
-write.csv(C19_scale_data_female, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C19_scale_data_female.csv")
+write.csv(C19_scale_data_female, "/SCRNA_Arsenic/C19_scale_data_female.csv")
 
 # Cluster 20
 C20_cells_female <- WhichCells(Brain.integrated, idents = 20)
 C20_de_genes_index <- which(Brain_Arsenic_DE_female_stim_C20[, 5] <= 0.05)
 C20_scale_data_female <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_female_stim_C20[C20_de_genes_index, ]), cells = C20_cells_female, slot = "scale.data")
-write.csv(C20_scale_data_female, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C20_scale_data_female.csv")
+write.csv(C20_scale_data_female, "/SCRNA_Arsenic/C20_scale_data_female.csv")
 
 # Cluster 22
 C22_cells_female <- WhichCells(Brain.integrated, idents = 22)
 C22_de_genes_index <- which(Brain_Arsenic_DE_female_stim_C22[, 5] <= 0.05)
 C22_scale_data_female <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_female_stim_C22[C22_de_genes_index, ]), cells = C22_cells_female, slot = "scale.data")
-write.csv(C22_scale_data_female, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C22_scale_data_female.csv")
+write.csv(C22_scale_data_female, "/SCRNA_Arsenic/C22_scale_data_female.csv")
 
 # Cluster 23
 C23_cells_female <- WhichCells(Brain.integrated, idents = 23)
 C23_de_genes_index <- which(Brain_Arsenic_DE_female_stim_C23[, 5] <= 0.05)
 C23_scale_data_female <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_female_stim_C23[C23_de_genes_index, ]), cells = C23_cells_female, slot = "scale.data")
-write.csv(C23_scale_data_female, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C23_scale_data_female.csv")
+write.csv(C23_scale_data_female, "/SCRNA_Arsenic/C23_scale_data_female.csv")
 
 # Cluster 24
 C24_cells_female <- WhichCells(Brain.integrated, idents = 24)
 C24_de_genes_index <- which(Brain_Arsenic_DE_female_stim_C24[, 5] <= 0.05)
 C24_scale_data_female <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_female_stim_C24[C24_de_genes_index, ]), cells = C24_cells_female, slot = "scale.data")
-write.csv(C24_scale_data_female, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C24_scale_data_female.csv")
+write.csv(C24_scale_data_female, "/SCRNA_Arsenic/C24_scale_data_female.csv")
 
 # Cluster 25
 C25_cells_female <- WhichCells(Brain.integrated, idents = 25)
 C25_de_genes_index <- which(Brain_Arsenic_DE_female_stim_C25[, 5] <= 0.05)
 C25_scale_data_female <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_female_stim_C25[C25_de_genes_index, ]), cells = C25_cells_female, slot = "scale.data")
-write.csv(C25_scale_data_female, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C25_scale_data_female.csv")
+write.csv(C25_scale_data_female, "/SCRNA_Arsenic/C25_scale_data_female.csv")
 
 # Cluster 26
 C26_cells_female <- WhichCells(Brain.integrated, idents = 26)
 C26_de_genes_index <- which(Brain_Arsenic_DE_female_stim_C26[, 5] <= 0.05)
 C26_scale_data_female <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_female_stim_C26[C26_de_genes_index, ]), cells = C26_cells_female, slot = "scale.data")
-write.csv(C26_scale_data_female, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C26_scale_data_female.csv")
+write.csv(C26_scale_data_female, "/SCRNA_Arsenic/C26_scale_data_female.csv")
 
 # Cluster 27
 C27_cells_female <- WhichCells(Brain.integrated, idents = 27)
 C27_de_genes_index <- which(Brain_Arsenic_DE_female_stim_C27[, 5] <= 0.05)
 C27_scale_data_female <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_female_stim_C27[C27_de_genes_index, ]), cells = C27_cells_female, slot = "scale.data")
-write.csv(C27_scale_data_female, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C27_scale_data_female.csv")
+write.csv(C27_scale_data_female, "/SCRNA_Arsenic/C27_scale_data_female.csv")
 
 Idents(Brain.integrated) <- "merged_cluster" #Remember for cluster 0, 0_0 became 0_1 and so on
 # Cluster 0_7
 C0_7_cells_female <- WhichCells(Brain.integrated, idents = "0_7")
 C0_7_de_genes_index <- which(deg_F_subcluster0_6[, 5] <= 0.05)
 C0_7_scale_data_female <- FetchData(Brain.integrated, vars = rownames(deg_F_subcluster0_6[C0_7_de_genes_index, ]), cells = C0_7_cells_female, slot = "scale.data")
-write.csv(C0_7_scale_data_female, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C0_7_scale_data_female.csv")
+write.csv(C0_7_scale_data_female, "/SCRNA_Arsenic/C0_7_scale_data_female.csv")
 
 # Cluster 0_5
 C0_5_cells_female <- WhichCells(Brain.integrated, idents = "0_5")
 C0_5_de_genes_index <- which(deg_F_subcluster0_4[, 5] <= 0.05)
 C0_5_scale_data_female <- FetchData(Brain.integrated, vars = rownames(deg_F_subcluster0_4[C0_5_de_genes_index, ]), cells = C0_5_cells_female, slot = "scale.data")
-write.csv(C0_5_scale_data_female, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C0_5_scale_data_female.csv")
+write.csv(C0_5_scale_data_female, "/SCRNA_Arsenic/C0_5_scale_data_female.csv")
 
 # Cluster 0_2
 C0_2_cells_female <- WhichCells(Brain.integrated, idents = "0_2")
 C0_2_de_genes_index <- which(deg_F_subcluster0_1[, 5] <= 0.05)
 C0_2_scale_data_female <- FetchData(Brain.integrated, vars = rownames(deg_F_subcluster0_1[C0_2_de_genes_index, ]), cells = C0_2_cells_female, slot = "scale.data")
-write.csv(C0_2_scale_data_female, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C0_2_scale_data_female.csv")
+write.csv(C0_2_scale_data_female, "/SCRNA_Arsenic/C0_2_scale_data_female.csv")
 
 # Cluster 0_4
 C0_4_cells_female <- WhichCells(Brain.integrated, idents = "0_4")
 C0_4_de_genes_index <- which(deg_F_subcluster0_3[, 5] <= 0.05)
 C0_4_scale_data_female <- FetchData(Brain.integrated, vars = rownames(deg_F_subcluster0_3[C0_4_de_genes_index, ]), cells = C0_4_cells_female, slot = "scale.data")
-write.csv(C0_4_scale_data_female, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C0_4_scale_data_female.csv")
+write.csv(C0_4_scale_data_female, "/SCRNA_Arsenic/C0_4_scale_data_female.csv")
 
 # Cluster 0_1
 C0_1_cells_female <- WhichCells(Brain.integrated, idents = "0_1")
 C0_1_de_genes_index <- which(deg_F_subcluster0_0[, 5] <= 0.05)
 C0_1_scale_data_female <- FetchData(Brain.integrated, vars = rownames(deg_F_subcluster0_0[C0_1_de_genes_index, ]), cells = C0_1_cells_female, slot = "scale.data")
-write.csv(C0_1_scale_data_female, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C0_1_scale_data_female.csv")
+write.csv(C0_1_scale_data_female, "/SCRNA_Arsenic/C0_1_scale_data_female.csv")
 
 
 # Define the clusters for which data is to be fetched for male
@@ -901,127 +901,127 @@ Idents(Brain.integrated) <- "seurat_clusters"
 C1_cells_male <- WhichCells(Brain.integrated, idents = 1)
 C1_de_genes_index <- which(Brain_Arsenic_DE_male_stim_C1[, 5] <= 0.05)
 C1_scale_data_male <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_male_stim_C1[C1_de_genes_index, ]), cells = C1_cells_male, slot = "scale.data")
-write.csv(C1_scale_data_male, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C1_scale_data_male.csv")
+write.csv(C1_scale_data_male, "/SCRNA_Arsenic/C1_scale_data_male.csv")
 
 # Cluster 2
 C2_cells_male <- WhichCells(Brain.integrated, idents = 2)
 C2_de_genes_index <- which(Brain_Arsenic_DE_male_stim_C2[, 5] <= 0.05)
 C2_scale_data_male <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_male_stim_C2[C2_de_genes_index, ]), cells = C2_cells_male, slot = "scale.data")
-write.csv(C2_scale_data_male, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C2_scale_data_male.csv")
+write.csv(C2_scale_data_male, "/SCRNA_Arsenic/C2_scale_data_male.csv")
 
 # Cluster 3
 C3_cells_male <- WhichCells(Brain.integrated, idents = 3)
 C3_de_genes_index <- which(Brain_Arsenic_DE_male_stim_C3[, 5] <= 0.05)
 C3_scale_data_male <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_male_stim_C3[C3_de_genes_index, ]), cells = C3_cells_male, slot = "scale.data")
-write.csv(C3_scale_data_male, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C3_scale_data_male.csv")
+write.csv(C3_scale_data_male, "/SCRNA_Arsenic/C3_scale_data_male.csv")
 
 # Cluster 5
 C5_cells_male <- WhichCells(Brain.integrated, idents = 5)
 C5_de_genes_index <- which(Brain_Arsenic_DE_male_stim_C5[, 5] <= 0.05)
 C5_scale_data_male <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_male_stim_C5[C5_de_genes_index, ]), cells = C5_cells_male, slot = "scale.data")
-write.csv(C5_scale_data_male, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C5_scale_data_male.csv")
+write.csv(C5_scale_data_male, "/SCRNA_Arsenic/C5_scale_data_male.csv")
 
 # Cluster 6
 C6_cells_male <- WhichCells(Brain.integrated, idents = 6)
 C6_de_genes_index <- which(Brain_Arsenic_DE_male_stim_C6[, 5] <= 0.05)
 C6_scale_data_male <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_male_stim_C6[C6_de_genes_index, ]), cells = C6_cells_male, slot = "scale.data")
-write.csv(C6_scale_data_male, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C6_scale_data_male.csv")
+write.csv(C6_scale_data_male, "/SCRNA_Arsenic/C6_scale_data_male.csv")
 
 # Cluster 7
 C7_cells_male <- WhichCells(Brain.integrated, idents = 7)
 C7_de_genes_index <- which(Brain_Arsenic_DE_male_stim_C7[, 5] <= 0.05)
 C7_scale_data_male <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_male_stim_C7[C7_de_genes_index, ]), cells = C7_cells_male, slot = "scale.data")
-write.csv(C7_scale_data_male, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C7_scale_data_male.csv")
+write.csv(C7_scale_data_male, "/SCRNA_Arsenic/C7_scale_data_male.csv")
 
 # Cluster 8
 C8_cells_male <- WhichCells(Brain.integrated, idents = 8)
 C8_de_genes_index <- which(Brain_Arsenic_DE_male_stim_C8[, 5] <= 0.05)
 C8_scale_data_male <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_male_stim_C8[C8_de_genes_index, ]), cells = C8_cells_male, slot = "scale.data")
-write.csv(C8_scale_data_male, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C8_scale_data_male.csv")
+write.csv(C8_scale_data_male, "/SCRNA_Arsenic/C8_scale_data_male.csv")
 
 # Cluster 9
 C9_cells_male <- WhichCells(Brain.integrated, idents = 9)
 C9_de_genes_index <- which(Brain_Arsenic_DE_male_stim_C9[, 5] <= 0.05)
 C9_scale_data_male <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_male_stim_C9[C9_de_genes_index, ]), cells = C9_cells_male, slot = "scale.data")
-write.csv(C9_scale_data_male, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C9_scale_data_male.csv")
+write.csv(C9_scale_data_male, "/SCRNA_Arsenic/C9_scale_data_male.csv")
 
 # Cluster 11
 C11_cells_male <- WhichCells(Brain.integrated, idents = 11)
 C11_de_genes_index <- which(Brain_Arsenic_DE_male_stim_C11[, 5] <= 0.05)
 C11_scale_data_male <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_male_stim_C11[C11_de_genes_index, ]), cells = C11_cells_male, slot = "scale.data")
-write.csv(C11_scale_data_male, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C11_scale_data_male.csv")
+write.csv(C11_scale_data_male, "/SCRNA_Arsenic/C11_scale_data_male.csv")
 
 # Cluster 12
 C12_cells_male <- WhichCells(Brain.integrated, idents = 12)
 C12_de_genes_index <- which(Brain_Arsenic_DE_male_stim_C12[, 5] <= 0.05)
 C12_scale_data_male <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_male_stim_C12[C12_de_genes_index, ]), cells = C12_cells_male, slot = "scale.data")
-write.csv(C12_scale_data_male, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C12_scale_data_male.csv")
+write.csv(C12_scale_data_male, "/SCRNA_Arsenic/C12_scale_data_male.csv")
 
 # Cluster 14
 C14_cells_male <- WhichCells(Brain.integrated, idents = 14)
 C14_de_genes_index <- which(Brain_Arsenic_DE_male_stim_C14[, 5] <= 0.05)
 C14_scale_data_male <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_male_stim_C14[C14_de_genes_index, ]), cells = C14_cells_male, slot = "scale.data")
-write.csv(C14_scale_data_male, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C14_scale_data_male.csv")
+write.csv(C14_scale_data_male, "/SCRNA_Arsenic/C14_scale_data_male.csv")
 
 # Cluster 15
 C15_cells_male <- WhichCells(Brain.integrated, idents = 15)
 C15_de_genes_index <- which(Brain_Arsenic_DE_male_stim_C15[, 5] <= 0.05)
 C15_scale_data_male <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_male_stim_C15[C15_de_genes_index, ]), cells = C15_cells_male, slot = "scale.data")
-write.csv(C15_scale_data_male, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C15_scale_data_male.csv")
+write.csv(C15_scale_data_male, "/SCRNA_Arsenic/C15_scale_data_male.csv")
 
 # Cluster 17
 C17_cells_male <- WhichCells(Brain.integrated, idents = 17)
 C17_de_genes_index <- which(Brain_Arsenic_DE_male_stim_C17[, 5] <= 0.05)
 C17_scale_data_male <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_male_stim_C17[C17_de_genes_index, ]), cells = C17_cells_male, slot = "scale.data")
-write.csv(C17_scale_data_male, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C17_scale_data_male.csv")
+write.csv(C17_scale_data_male, "/SCRNA_Arsenic/C17_scale_data_male.csv")
 
 # Cluster 19
 C19_cells_male <- WhichCells(Brain.integrated, idents = 19)
 C19_de_genes_index <- which(Brain_Arsenic_DE_male_stim_C19[, 5] <= 0.05)
 C19_scale_data_male <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_male_stim_C19[C19_de_genes_index, ]), cells = C19_cells_male, slot = "scale.data")
-write.csv(C19_scale_data_male, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C19_scale_data_male.csv")
+write.csv(C19_scale_data_male, "/SCRNA_Arsenic/C19_scale_data_male.csv")
 
 # Cluster 20
 C20_cells_male <- WhichCells(Brain.integrated, idents = 20)
 C20_de_genes_index <- which(Brain_Arsenic_DE_male_stim_C20[, 5] <= 0.05)
 C20_scale_data_male <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_male_stim_C20[C20_de_genes_index, ]), cells = C20_cells_male, slot = "scale.data")
-write.csv(C20_scale_data_male, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C20_scale_data_male.csv")
+write.csv(C20_scale_data_male, "/SCRNA_Arsenic/C20_scale_data_male.csv")
 
 # Cluster 22
 C22_cells_male <- WhichCells(Brain.integrated, idents = 22)
 C22_de_genes_index <- which(Brain_Arsenic_DE_male_stim_C22[, 5] <= 0.05)
 C22_scale_data_male <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_male_stim_C22[C22_de_genes_index, ]), cells = C22_cells_male, slot = "scale.data")
-write.csv(C22_scale_data_male, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C22_scale_data_male.csv")
+write.csv(C22_scale_data_male, "/SCRNA_Arsenic/C22_scale_data_male.csv")
 
 # Cluster 23
 C23_cells_male <- WhichCells(Brain.integrated, idents = 23)
 C23_de_genes_index <- which(Brain_Arsenic_DE_male_stim_C23[, 5] <= 0.05)
 C23_scale_data_male <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_male_stim_C23[C23_de_genes_index, ]), cells = C23_cells_male, slot = "scale.data")
-write.csv(C23_scale_data_male, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C23_scale_data_male.csv")
+write.csv(C23_scale_data_male, "/SCRNA_Arsenic/C23_scale_data_male.csv")
 
 # Cluster 24
 C24_cells_male <- WhichCells(Brain.integrated, idents = 24)
 C24_de_genes_index <- which(Brain_Arsenic_DE_male_stim_C24[, 5] <= 0.05)
 C24_scale_data_male <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_male_stim_C24[C24_de_genes_index, ]), cells = C24_cells_male, slot = "scale.data")
-write.csv(C24_scale_data_male, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C24_scale_data_male.csv")
+write.csv(C24_scale_data_male, "/SCRNA_Arsenic/C24_scale_data_male.csv")
 
 # Cluster 25
 C25_cells_male <- WhichCells(Brain.integrated, idents = 25)
 C25_de_genes_index <- which(Brain_Arsenic_DE_male_stim_C25[, 5] <= 0.05)
 C25_scale_data_male <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_male_stim_C25[C25_de_genes_index, ]), cells = C25_cells_male, slot = "scale.data")
-write.csv(C25_scale_data_male, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C25_scale_data_male.csv")
+write.csv(C25_scale_data_male, "/SCRNA_Arsenic/C25_scale_data_male.csv")
 
 # Cluster 26
 C26_cells_male <- WhichCells(Brain.integrated, idents = 26)
 C26_de_genes_index <- which(Brain_Arsenic_DE_male_stim_C26[, 5] <= 0.05)
 C26_scale_data_male <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_male_stim_C26[C26_de_genes_index, ]), cells = C26_cells_male, slot = "scale.data")
-write.csv(C26_scale_data_male, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C26_scale_data_male.csv")
+write.csv(C26_scale_data_male, "/SCRNA_Arsenic/C26_scale_data_male.csv")
 
 # Cluster 27
 C27_cells_male <- WhichCells(Brain.integrated, idents = 27)
 C27_de_genes_index <- which(Brain_Arsenic_DE_male_stim_C27[, 5] <= 0.05)
 C27_scale_data_male <- FetchData(Brain.integrated, vars = rownames(Brain_Arsenic_DE_male_stim_C27[C27_de_genes_index, ]), cells = C27_cells_male, slot = "scale.data")
-write.csv(C27_scale_data_male, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C27_scale_data_male.csv")
+write.csv(C27_scale_data_male, "/SCRNA_Arsenic/C27_scale_data_male.csv")
 
 
 Idents(Brain.integrated) <- "merged_cluster" #Remember for cluster 0, 0_0 became 0_1 and so on
@@ -1029,33 +1029,33 @@ Idents(Brain.integrated) <- "merged_cluster" #Remember for cluster 0, 0_0 became
 C0_7_cells_male <- WhichCells(Brain.integrated, idents = "0_7")
 C0_7_de_genes_index <- which(deg_F_subcluster0_6[, 5] <= 0.05)
 C0_7_scale_data_male <- FetchData(Brain.integrated, vars = rownames(deg_F_subcluster0_6[C0_7_de_genes_index, ]), cells = C0_7_cells_male, slot = "scale.data")
-write.csv(C0_7_scale_data_male, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C0_7_scale_data_male.csv")
+write.csv(C0_7_scale_data_male, "/SCRNA_Arsenic/C0_7_scale_data_male.csv")
 
 # Cluster 0_5
 C0_5_cells_male <- WhichCells(Brain.integrated, idents = "0_5")
 C0_5_de_genes_index <- which(deg_F_subcluster0_4[, 5] <= 0.05)
 C0_5_scale_data_male <- FetchData(Brain.integrated, vars = rownames(deg_F_subcluster0_4[C0_5_de_genes_index, ]), cells = C0_5_cells_male, slot = "scale.data")
-write.csv(C0_5_scale_data_male, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C0_5_scale_data_male.csv")
+write.csv(C0_5_scale_data_male, "/SCRNA_Arsenic/C0_5_scale_data_male.csv")
 
 # Cluster 0_2
 C0_2_cells_male <- WhichCells(Brain.integrated, idents = "0_2")
 C0_2_de_genes_index <- which(deg_F_subcluster0_1[, 5] <= 0.05)
 C0_2_scale_data_male <- FetchData(Brain.integrated, vars = rownames(deg_F_subcluster0_1[C0_2_de_genes_index, ]), cells = C0_2_cells_male, slot = "scale.data")
-write.csv(C0_2_scale_data_male, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C0_2_scale_data_male.csv")
+write.csv(C0_2_scale_data_male, "/SCRNA_Arsenic/C0_2_scale_data_male.csv")
 
 # Cluster 0_4
 C0_4_cells_male <- WhichCells(Brain.integrated, idents = "0_4")
 C0_4_de_genes_index <- which(deg_F_subcluster0_3[, 5] <= 0.05)
 C0_4_scale_data_male <- FetchData(Brain.integrated, vars = rownames(deg_F_subcluster0_3[C0_4_de_genes_index, ]), cells = C0_4_cells_male, slot = "scale.data")
-write.csv(C0_4_scale_data_male, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C0_4_scale_data_male.csv")
+write.csv(C0_4_scale_data_male, "/SCRNA_Arsenic/C0_4_scale_data_male.csv")
 
 # Cluster 0_1
 C0_1_cells_male <- WhichCells(Brain.integrated, idents = "0_1")
 C0_1_de_genes_index <- which(deg_F_subcluster0_0[, 5] <= 0.05)
 C0_1_scale_data_male <- FetchData(Brain.integrated, vars = rownames(deg_F_subcluster0_0[C0_1_de_genes_index, ]), cells = C0_1_cells_male, slot = "scale.data")
-write.csv(C0_1_scale_data_male, "/data/mackanholt_lab/achatur/SCRNA_Arsenic/C0_1_scale_data_male.csv")
+write.csv(C0_1_scale_data_male, "/SCRNA_Arsenic/C0_1_scale_data_male.csv")
 
-save.image(file='/data/mackanholt_lab/achatur/SCRNA_Arsenic/SCRNA_Arsenic.RData')
+save.image(file='/SCRNA_Arsenic/SCRNA_Arsenic.RData')
 
 
 
