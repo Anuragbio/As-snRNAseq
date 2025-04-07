@@ -11,10 +11,10 @@ library("gplots")
 ##scTransform requires considerable RAM so add this statement before proceeding to intergration.
 options(future.globals.maxSize= 53687091200)
 ##Read data in 10x
-Female_Control_R1_Data <- Read10X(data.dir="/data/Palmetto_sync/Projects/achatur_arsenic_scrna/Counts_denovo/BD6CFR2/outs/filtered_feature_bc_matrix/")
-Male_Control_R1_Data <- Read10X(data.dir="/data/Palmetto_sync/Projects/achatur_arsenic_scrna/Counts_denovo/BD6CMR1/outs/filtered_feature_bc_matrix/")
-Female_Arsenic_R1_Data <- Read10X(data.dir="/data/Palmetto_sync/Projects/achatur_arsenic_scrna/Counts_denovo/BD6TFR1/outs/filtered_feature_bc_matrix/")
-Male_Arsenic_R1_Data <- Read10X(data.dir="/data/Palmetto_sync/Projects/achatur_arsenic_scrna/Counts/BD6TMR2/outs/filtered_feature_bc_matrix/")
+Female_Control_R1_Data <- Read10X(data.dir="Counts_denovo/BD6CFR2/outs/filtered_feature_bc_matrix/")
+Male_Control_R1_Data <- Read10X(data.dir="/Counts_denovo/BD6CMR1/outs/filtered_feature_bc_matrix/")
+Female_Arsenic_R1_Data <- Read10X(data.dir="/Counts_denovo/BD6TFR1/outs/filtered_feature_bc_matrix/")
+Male_Arsenic_R1_Data <- Read10X(data.dir="/Counts/BD6TMR2/outs/filtered_feature_bc_matrix/")
 ##Create Seurat objects
 Female_Control_R1 <- CreateSeuratObject(counts=Female_Control_R1_Data,project="Female_Control",min.cells=5)
 
